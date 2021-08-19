@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,11 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            //Valores Default
+
+            crearChat(WindowsFormsApp1.Properties.Resources.pp__1_, "Pekke");
+            crearChat(WindowsFormsApp1.Properties.Resources.pp__2_, "Seba");
+            crearChat(WindowsFormsApp1.Properties.Resources.pp, "Grupo");
         }
 
         private void crearChat(Image imagen, string nombre)
@@ -55,6 +61,18 @@ namespace WindowsFormsApp1
 
             //Eventos
             panel.Click += panel_Click;
+            panel.MouseEnter += panel_MouseEnter;
+            panel.MouseLeave += panel_MouseLeave;
+        }
+
+        private void panel_MouseEnter(object sender, EventArgs e)
+        {
+            ((Panel)sender).BackColor = Color.FromArgb(16, 15, 52);
+        }
+
+        private void panel_MouseLeave(object sender, EventArgs e)
+        {
+            ((Panel)sender).BackColor = Color.FromArgb(26, 25, 62);
         }
 
         private void panel_Click(object sender, EventArgs e)
@@ -123,22 +141,6 @@ namespace WindowsFormsApp1
             timerCerrar.Start();
         }
 
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            //Abrir forma
-            abrirChat(new FormChats(), circularPictureBox1.Image, label3.Text);
-        }
-
-        private void panel1_MouseHover(object sender, EventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(16,15,52);
-        }
-
-        private void panel1_MouseLeave(object sender, EventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(26, 25, 62);
-        }
-
         private void iconButton4_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -149,6 +151,21 @@ namespace WindowsFormsApp1
             Image imagen = WindowsFormsApp1.Properties.Resources.pp__1_;
             string titulo = "Placeholder";
             crearChat(imagen,titulo);
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void panelSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -83,29 +83,9 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pp__1_1 {
-            get {
-                object obj = ResourceManager.GetObject("pp (1)1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pp__2_ {
             get {
                 object obj = ResourceManager.GetObject("pp (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pp__2_1 {
-            get {
-                object obj = ResourceManager.GetObject("pp (2)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

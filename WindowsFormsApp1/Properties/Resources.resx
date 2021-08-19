@@ -130,12 +130,6 @@
   <data name="pp (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pp (3).jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pp (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pp (2)1.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pp (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pp (1)1.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pp.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
